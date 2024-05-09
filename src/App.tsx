@@ -1,7 +1,15 @@
 import React from "react";
+import OlContextProvider from "./context/openlayers/OlContext";
+import OlMap from "./components/OlMap";
 
 function App() {
-  return <div>Hello World!</div>;
+  return (
+    <div>
+      <OlContextProvider>
+        <OlMap />
+      </OlContextProvider>
+    </div>
+  );
 }
 
 export default App;
