@@ -1,14 +1,18 @@
 import React from "react";
 import OlContextProvider from "./context/openlayers/OlContext";
-import OlMap from "./components/OlMap";
+import OlMap from "./components/openlayers/OlMap";
+import Search from "./pages/search/Search";
+import Info from "./pages/info/Info";
 
 function App() {
   return (
-    <div>
-      <OlContextProvider>
+    <OlContextProvider>
+      <>
+        <Search />
+        <Info />
         <OlMap />
-      </OlContextProvider>
-    </div>
+      </>
+    </OlContextProvider>
   );
 }
 
