@@ -3,20 +3,25 @@ import { OlContext } from "../../context/openlayers/OlContext";
 import styled from "@emotion/styled";
 
 interface Props {
+  flag: boolean;
   children?: React.ReactNode;
 }
 
-const Div = styled.div`
+interface DivProps {
+  flag: boolean;
+}
+
+const Div = styled.div<DivProps>`
   overflow: hidden;
   position: absolute;
   bottom: 0;
   top: 0;
-  left: 390px;
+  left: ${(props) => (props.flag ? "390px" : "0px")};
   right: 0;
   z-index: 0;
 `;
 
-export default function OlMap({ children }: Props) {
+export default function OlMap({ children, flag }: Props) {
   const mapRef = useRef<HTMLDivElement>(null);
   const mapContext = useContext(OlContext);
 
@@ -32,5 +37,9 @@ export default function OlMap({ children }: Props) {
     };
   }, [mapContext]);
 
-  return <Div ref={mapRef}>{children}</Div>;
+  return (
+    <Div flag={flag} ref={mapRef}>
+      {children}
+    </Div>
+  );
 }

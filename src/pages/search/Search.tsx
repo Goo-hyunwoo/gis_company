@@ -73,7 +73,7 @@ export default function Search() {
     <Section>
       <Header>
         <Title>
-          <a href="?nil_profile=title&amp;nil_src=local">kakaomap</a>
+          <a href="?nil_profile=title&amp;nil_src=local">도야지맵</a>
         </Title>
         <HeaderButton type="button">더보기 메뉴 열기</HeaderButton>
         <ScreenOut className="screen_out">검색</ScreenOut>

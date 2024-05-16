@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import React from "react";
 import { screenOut } from "../search/SearchInput";
+import MyPage from "./MyPage";
 
 const Div = styled.div`
   overflow: hidden;
@@ -51,8 +52,25 @@ const Li = styled.li`
     color: rgba(255, 255, 255, 0.9);
     text-align: center;
     text-decoration: none;
+
+    &.active {
+      font-weight: 600;
+      background-color: #1467dd;
+      background-color: rgba(13, 91, 212, 0.8);
+      color: #fff;
+    }
   }
 `;
+
+const Body = styled.div`
+  height: 709px;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+`;
+
+const My = styled.div``;
 
 export default function Info() {
   return (
@@ -83,7 +101,7 @@ export default function Info() {
                 </a>
               </Li>
               <Li>
-                <a href="/" title="즐겨찾기">
+                <a href="/" title="즐겨찾기" className="active">
                   MY
                 </a>
               </Li>
@@ -91,6 +109,11 @@ export default function Info() {
           </Navi>
         </Main>
       </Header>
+      <Body>
+        <My>
+          <MyPage />
+        </My>
+      </Body>
     </Div>
   );
 }
